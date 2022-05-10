@@ -21,7 +21,9 @@ def main():
     subprocess.run(["make","clean",makefile])
     fast = []
     slow = []
+    x  = list()
     for i in range(9,20):
+        x.append(i)
         print("starting with "+ str(i))
         slow_val = run_instance(i, 1)
         slow.append(slow_val)
@@ -29,7 +31,7 @@ def main():
         fast.append(fast_val)
     print(slow)
     print(fast)
-    x = [i for i in range(9,27)]
+    
     z = [fast[i]/slow[i] for i in range(len(slow))]
     y = slow + fast
     x+=x
